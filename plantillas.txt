@@ -1,0 +1,8 @@
+Personalmente prefiero usar el sistema de plantillas pug.
+Motivos:
+  Facil de implementar en la app
+  Se puede usar mixins para definir varias plantillas comunes lo que lo hace facil de organizar
+  Tiene un sistema de espaciado en lugar de etiquetas
+  Se puede usar JS dentro de las plantillas
+  Las condicionales son sencillas de implementar
+  Implementacion de layouts de una manera sencilla

@@ -1,0 +1,20 @@
+mixin tableForm(items)
+  .container-fluid
+    div(class='row justify-content-center')
+      div(class='col-4 mt-5 table-container')
+        if items.length
+          table(class='table table-striped')
+            thead
+              tr
+                th(scope='col') Nombre
+                th(scope='col') Precio
+                th(scope='col') Miniatura
+            tbody
+              each item in items
+                tr
+                  td=item.title
+                  td=item.price
+                  td
+                    img(class='thumbnail' src=`${item.thumbnail}` alt=`${item.title}-image`)
+        else
+          h2 No hay productos!

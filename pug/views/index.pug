@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div(class='container-fluid')
+    div(class='row mt-4 justify-content-center')
+      div(class='col-4 form-container')
+        h2(class='text-center mb-4') Productos
+        form(action='/productos' method='POST')
+          .mb-3
+            label(for='title' class='form-label') Titulo del producto
+            input(type='text' class='form-control' name='title' placeholder='Calculadora,etc' required)
+          .mb-3
+            label(for='price' class='form-label') Precio
+            input(type='text' class='form-control' name='price' placeholder='10.00' required)
+          .mb-3
+            label(for='thumbnail' class='form-label') Thumbnail
+            input(type='text' class='form-control' name='thumbnail' placeholder='http://example.com' required)
+          button(class='btn mx-auto d-block form-btn' type='submit') Agregar

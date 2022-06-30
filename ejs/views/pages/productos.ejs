@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-4 mt-5 table-container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Miniatura</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% items.forEach(item => { %>
+            <tr>
+              <td><%=item.title%></td>
+              <td><%=item.price%></td>
+              <td>
+                <img class="thumbnail" src="<%=item.thumbnail%>" alt="<%=item.title%>-img">
+              </td>
+            </tr>
+          <% }); %>
+        </tbody>      
+      </table>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') %>

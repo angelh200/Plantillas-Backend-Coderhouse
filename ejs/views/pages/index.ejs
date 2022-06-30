@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<div class="container-fluid">
+  <div class="row mt-4 justify-content-center">
+    <div class="col-4 form-container">
+      <h2 class="text-center mb-4">Productos</h2>
+      <form action="/productos" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Titulo del producto</label>
+          <input type="text" class="form-control" name="title" placeholder="Calculadora, etc" required>
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Precio</label>
+          <input type="text" placeholder="10.00" class="form-control" name="price" required>
+        </div>
+        <div class="mb-3">
+          <label for="thumbnail" class="form-label">Thumbnail</label>
+          <input type="text" placeholder="http://example.com" class="form-control" name="thumbnail">
+        </div>
+        <button class="btn mx-auto d-block form-btn" type="submit">Agregar</button>
+      </form>
+    </div>
+  </div>
+</div>
+<%- include('../partials/footer') %>
