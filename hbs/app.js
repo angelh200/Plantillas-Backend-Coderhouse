@@ -1,8 +1,21 @@
 const express =require('express');
+const { Server: IOServer } = require('socket.io');
+const { Server: HttpServer } = require('http');
+
 const app = express();
+const httpServer = new HttpServer(app);
+const io = new IOServer(httpServer);
+
+// Rutas
 const productApi = require('./routes/productos');
 const webRouter = require('./routes/index');
+
+// Motor de Plantillas
 const hbs = require('express-handlebars');
+
+// Contenedor
+const Contenedor = require('./Contenedor');
+const productos = new Contenedor('productos');
 
 const PORT = 3000;
 
@@ -31,8 +44,13 @@ app.use('/', webRouter);
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
-const server = app.listen(PORT, () => {
-    console.log(`Servidor activo en el puerto ${server.address().port}`);
-});
+// Conexiones websocket
+io.on('connection', socket => {
+    console.log('Usuario Conectado');
 
-server.on('error', err => console.log('Error en el servidor', err));
+    socket.emit('msg', msg);
+})
+
+httpServer.listen(PORT, () => {
+    console.log(`Servidor activo en el puerto ${PORT}`);
+});

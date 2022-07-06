@@ -4,6 +4,7 @@ const Contenedor = require('../Contenedor');
 
 const productos = new Contenedor('productos');
 
+// Main route
 router.get('/', (req, res) => {
   res.render('main');
 });
